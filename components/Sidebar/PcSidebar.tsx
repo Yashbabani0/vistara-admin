@@ -88,7 +88,7 @@ export default function PcSidebar() {
 
   return (
     <div
-      className={`hidden md:flex flex-col h-screen bg-white border-r border-gray-200 ${
+      className={`hidden md:flex flex-col h-screen z-50 bg-white border-r border-gray-200 ${
         isOpen ? "w-72" : "w-20"
       } transition-all duration-300`}
     >
