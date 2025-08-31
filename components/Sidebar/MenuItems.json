@@ -1,0 +1,166 @@
+{
+  "menuItems": [
+    {
+      "title": "Dashboard",
+      "icon": "dashboard",
+      "path": "/dashboard"
+    },
+    {
+      "title": "Products",
+      "icon": "package",
+      "path": "/dashboard/products",
+      "subItems": [
+        {
+          "title": "All Products",
+          "path": "/dashboard/products/view"
+        },
+        {
+          "title": "Add Product",
+          "path": "/dashboard/products/add"
+        }
+      ]
+    },
+    {
+      "title": "Categories",
+      "icon": "folder",
+      "path": "/dashboard/categories",
+      "subItems": [
+        {
+          "title": "View Categories",
+          "path": "/dashboard/categories"
+        },
+        {
+          "title": "Add Category",
+          "path": "/dashboard/categories/new"
+        }
+      ]
+    },
+    {
+      "title": "Collections",
+      "icon": "grid",
+      "path": "/dashboard/collections",
+      "subItems": [
+        {
+          "title": "View Collections",
+          "path": "/dashboard/collections"
+        },
+        {
+          "title": "Add Collection",
+          "path": "/dashboard/collections/new"
+        }
+      ]
+    },
+    {
+      "title": "Orders",
+      "icon": "shopping-cart",
+      "path": "/dashboard/orders",
+      "subItems": [
+        {
+          "title": "All Orders",
+          "path": "/dashboard/orders"
+        },
+        {
+          "title": "Pending",
+          "path": "/dashboard/orders/pending"
+        },
+        {
+          "title": "Processing",
+          "path": "/dashboard/orders/processing"
+        },
+        {
+          "title": "Completed",
+          "path": "/dashboard/orders/completed"
+        }
+      ]
+    },
+    {
+      "title": "Customers",
+      "icon": "users",
+      "path": "/dashboard/customers"
+    },
+    {
+      "title": "Marketing",
+      "icon": "megaphone",
+      "path": "/dashboard/marketing",
+      "subItems": [
+        {
+          "title": "Banners",
+          "path": "/dashboard/marketing/banners"
+        },
+        {
+          "title": "Add Banner",
+          "path": "/dashboard/marketing/banners/new"
+        },
+        {
+          "title": "Promotions",
+          "path": "/dashboard/marketing/promotions"
+        },
+        {
+          "title": "Coupons",
+          "path": "/dashboard/marketing/coupons"
+        },
+        {
+          "title": "Add Coupon",
+          "path": "/dashboard/marketing/coupons/new"
+        }
+      ]
+    },
+    {
+      "title": "Analytics",
+      "icon": "bar-chart",
+      "path": "/dashboard/analytics",
+      "subItems": [
+        {
+          "title": "Sales Overview",
+          "path": "/dashboard/analytics/sales"
+        },
+        {
+          "title": "Customer Insights",
+          "path": "/dashboard/analytics/customers"
+        },
+        {
+          "title": "Product Performance",
+          "path": "/dashboard/analytics/products"
+        }
+      ]
+    },
+    {
+      "title": "Customer Support",
+      "icon": "headphones",
+      "path": "/dashboard/support",
+      "subItems": [
+        {
+          "title": "Support Tickets",
+          "path": "/dashboard/support/tickets"
+        },
+        {
+          "title": "Feedback Forms",
+          "path": "/dashboard/support/feedback"
+        }
+      ]
+    },
+    {
+      "title": "Policies",
+      "icon": "file-text",
+      "path": "/dashboard/policies",
+      "subItems": [
+        {
+          "title": "Privacy Policy",
+          "path": "/dashboard/policies/privacy"
+        },
+        {
+          "title": "Terms & Conditions",
+          "path": "/dashboard/policies/terms"
+        },
+        {
+          "title": "Shipping Policy",
+          "path": "/dashboard/policies/shipping"
+        },
+        {
+          "title": "Return Policy",
+          "path": "/dashboard/policies/returns"
+        }
+      ]
+    }
+  ]
+}
