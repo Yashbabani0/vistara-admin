@@ -6,7 +6,7 @@ export async function GET() {
     // Debug environment variables (without exposing full keys)
     const privateKey = process.env.IMAGEKIT_PRIVATE_KEY;
     const publicKey = process.env.IMAGEKIT_PUBLIC_KEY;
-    
+
     console.log("Environment check:", {
       hasPrivateKey: !!privateKey,
       privateKeyPrefix: privateKey?.substring(0, 10) + "...",
@@ -18,11 +18,11 @@ export async function GET() {
       throw new Error("ImageKit keys are missing from environment variables");
     }
 
-    if (!privateKey.startsWith('private_')) {
+    if (!privateKey.startsWith("private_")) {
       throw new Error("Private key should start with 'private_'");
     }
 
-    if (!publicKey.startsWith('public_')) {
+    if (!publicKey.startsWith("public_")) {
       throw new Error("Public key should start with 'public_'");
     }
 
@@ -43,12 +43,12 @@ export async function GET() {
       signature,
       publicKey: publicKey,
     });
-  } catch (error) {
+  } catch (error: string | any) {
     console.error("Error in imagekit-auth route:", error);
     return Response.json(
-      { 
+      {
         error: "Failed to generate auth parameters",
-        details: error.message 
+        details: error.message,
       },
       { status: 500 }
     );

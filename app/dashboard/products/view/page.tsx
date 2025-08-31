@@ -21,6 +21,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { toast } from "sonner";
 import Link from "next/link";
+import { Id } from "@/convex/_generated/dataModel";
 
 export default function ViewAllProductsPage() {
   const products = useQuery(api.viewProducts.getAll);
@@ -29,9 +30,8 @@ export default function ViewAllProductsPage() {
     null
   );
 
-  // ✅ delete handler
   const handleDeleteProduct = async (
-    productId: string,
+    productId: Id<"products">,
     productName: string
   ) => {
     try {
@@ -198,14 +198,21 @@ export default function ViewAllProductsPage() {
                     </td>
                     <td className="py-4 px-2">
                       <div className="flex flex-wrap gap-1 max-w-24">
-                        {product.colors?.slice(0, 3).map((color, index) => (
-                          <div
-                            key={index}
-                            className="w-6 h-6 rounded-full border-2 border-gray-300"
-                            style={{ backgroundColor: color.hex }}
-                            title={color.name}
-                          />
-                        ))}
+                        {product.colors
+                          ?.slice(0, 3)
+                          .map(
+                            (
+                              color: { hex: string; name: string },
+                              index: number
+                            ) => (
+                              <div
+                                key={index}
+                                className="w-6 h-6 rounded-full border-2 border-gray-300"
+                                style={{ backgroundColor: color.hex }}
+                                title={color.name}
+                              />
+                            )
+                          )}
                         {product.colors && product.colors.length > 3 && (
                           <div className="w-6 h-6 rounded-full border-2 border-gray-300 bg-gray-100 flex items-center justify-center text-xs">
                             +{product.colors.length - 3}

@@ -22,20 +22,12 @@ import {
   ImageKitServerError,
   ImageKitUploadNetworkError,
   upload,
+  UploadResponse,
 } from "@imagekit/next";
 
 interface Color {
   name: string;
   hex: string;
-}
-
-interface UploadResponse {
-  fileId: string;
-  name: string;
-  url: string;
-  filePath: string;
-  size: number;
-  fileType: string;
 }
 
 export default function Page() {
@@ -136,8 +128,8 @@ export default function Page() {
         publicKey,
         file,
         fileName: file.name,
-        folder: "/products", // Optional: organize files in folders
-        useUniqueFileName: true, // Prevent filename conflicts
+        folder: "/products",
+        useUniqueFileName: true,
         onProgress: (event) => {
           const progress = (event.loaded / event.total) * 100;
           setUploadProgress((prev) => ({
@@ -146,6 +138,10 @@ export default function Page() {
           }));
         },
       });
+
+      if (!uploadResponse.url) {
+        throw new Error("Upload did not return a URL");
+      }
 
       return uploadResponse.url;
     } catch (error) {
