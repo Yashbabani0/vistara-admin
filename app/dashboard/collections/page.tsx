@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { Search, Layers, Plus, Edit, Trash2, Eye } from "lucide-react";
-
+import { Id } from "@/convex/_generated/dataModel";
 const ViewAllCollections = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("name");
@@ -62,7 +62,7 @@ const ViewAllCollections = () => {
     }
   };
 
-  const handleEdit = async (id: string) => {
+  const handleEdit = async (id: Id<"collections">) => {
     const collection = collections.find((c) => c._id === id);
     const newName = window.prompt(
       "Edit collection name:",
@@ -74,7 +74,7 @@ const ViewAllCollections = () => {
     }
   };
 
-  const handleDelete = async (id: string) => {
+  const handleDelete = async (id: Id<"collections">) => {
     if (window.confirm("Are you sure you want to delete this collection?")) {
       await deleteCollection({ id });
       alert("Collection deleted!");
@@ -132,8 +132,9 @@ const ViewAllCollections = () => {
                   collections.filter((col) => {
                     const createdDate = new Date(col._creationTime);
                     const now = new Date();
-                    const daysDiff =
-                      (now - createdDate) / (1000 * 60 * 60 * 24);
+                      const daysDiff =
+                      (now.getTime() - createdDate.getTime()) /
+                      (1000 * 60 * 60 * 24);
                     return daysDiff <= 7;
                   }).length
                 }
