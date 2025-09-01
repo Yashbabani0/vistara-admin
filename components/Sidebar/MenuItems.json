@@ -23,32 +23,12 @@
     {
       "title": "Categories",
       "icon": "folder",
-      "path": "/dashboard/categories",
-      "subItems": [
-        {
-          "title": "View Categories",
-          "path": "/dashboard/categories"
-        },
-        {
-          "title": "Add Category",
-          "path": "/dashboard/categories/new"
-        }
-      ]
+      "path": "/dashboard/categories"
     },
     {
       "title": "Collections",
       "icon": "grid",
-      "path": "/dashboard/collections",
-      "subItems": [
-        {
-          "title": "View Collections",
-          "path": "/dashboard/collections"
-        },
-        {
-          "title": "Add Collection",
-          "path": "/dashboard/collections/new"
-        }
-      ]
+      "path": "/dashboard/collections"
     },
     {
       "title": "Orders",

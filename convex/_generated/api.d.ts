@@ -17,6 +17,7 @@ import type * as categories from "../categories.js";
 import type * as collections from "../collections.js";
 import type * as createProduct from "../createProduct.js";
 import type * as deleteProduct from "../deleteProduct.js";
+import type * as users from "../users.js";
 import type * as viewProducts from "../viewProducts.js";
 
 /**
@@ -32,6 +33,7 @@ declare const fullApi: ApiFromModules<{
   collections: typeof collections;
   createProduct: typeof createProduct;
   deleteProduct: typeof deleteProduct;
+  users: typeof users;
   viewProducts: typeof viewProducts;
 }>;
 export declare const api: FilterApi<
